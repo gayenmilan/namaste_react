@@ -14,7 +14,7 @@ const resObj = [
           "Snacks",
           "Fast Food"
         ],
-        "avgRating": 4.4,
+        "avgRating": 3.4,
         "parentId": "547",
         "avgRatingString": "4.4",
         "totalRatingsString": "10K+",
