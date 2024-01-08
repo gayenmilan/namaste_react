@@ -1,9 +1,10 @@
 import RestroCard from "./RestroCard";
-import resObj from "../utils/mockData";
+// import resObj from "../utils/mockData";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [listofrest, setlistofrest] = useState(resObj);
+  const [listofrest, setlistofrest] = useState([]);
 
   useEffect(() => {
     fetchdata();
@@ -17,6 +18,10 @@ const Body = () => {
     console.log(json);
 
     setlistofrest(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+  };
+
+  if(listofrest.length === 0){
+    return(<Shimmer />);
   };
 
   return (

@@ -60,3 +60,17 @@
     height: 160px;
     overflow: hidden;
 }
+
+.shimmer_ui .rest_card{
+    opacity: 1;
+    background-color: #ccc;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.shimmer_ui .rest_card p, .shimmer_ui .rest_card h5, .shimmer_ui .rest_card img{
+    opacity: 0.9;
+    filter: blur(2rem);
+    color: #000;
+    font-weight: bold;
+}
