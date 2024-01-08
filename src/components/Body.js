@@ -16,7 +16,7 @@ const Body = () => {
   
     console.log(json);
 
-    setlistofrest(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    setlistofrest(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
   };
 
   return (
@@ -28,7 +28,7 @@ const Body = () => {
               className="top_restro btn btn-success"
               onClick={() => {
                 const filterdList = listofrest.filter(
-                  (restfil) => restfil.info.avgRating > 3,
+                  (restfil) => restfil.info.avgRating > 4.1,
                 );
                 setlistofrest(filterdList);
               }}
