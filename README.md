@@ -25,3 +25,9 @@
 - useState() & useEffect() we have to import as nammed import
 - useState() we will use to create state variable inside a component | const[listofrest, setlistofrest] = useState([]); is the syntax to create state variable. | In useState variable we have to pass 2 argument [listofrest, setlistofrest], first one will contain the initial value and the secod one will update the first one whenever there is any changes in data. | Whenever the value of state variable changes react will re render the UI as per new data.
 - Reconciliation Algorithim/React Fiber
+
+# First Round
+- Episode 7
+
+# Revise
+- Episode 6 - 1 H 37 M

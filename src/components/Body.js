@@ -10,21 +10,27 @@ const Body = () => {
     fetchdata();
   }, []);
 
-  const fetchdata = async () =>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.4821998&lng=88.3123894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+  const fetchdata = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.4821998&lng=88.3123894&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+    );
 
     const json = await data.json();
-  
+
     console.log(json);
 
-    setlistofrest(json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
+    setlistofrest(
+      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants,
+    );
   };
 
-  if(listofrest.length === 0){
-    return(<Shimmer />);
-  };
+  // if(listofrest.length === 0){
+  //   return(<Shimmer />);
+  // };
 
-  return (
+  return listofrest.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="container-fluid">
       <div className="body_container">
         <div className="row">
