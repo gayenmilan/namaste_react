@@ -93,3 +93,46 @@
 
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Paragraph Value on Checkbox Checked (with Session Storage)</title>
+</head>
+<body>
+
+<input type="checkbox" id="checkbox_1" onchange="updateParagraphValue(this)">
+<label for="checkbox_1">Toggle Paragraph</label>
+
+<p id="paragraph">Paragraph Value</p>
+
+<script>
+  window.onload = function() {
+    var checkbox = document.getElementById('checkbox_1');
+    var state = sessionStorage.getItem(checkbox.id);
+    if (state === 'checked') {
+      checkbox.checked = true;
+      updateParagraphValue(checkbox);
+    } else {
+      checkbox.checked = false;
+    }
+  };
+
+  function updateParagraphValue(checkbox) {
+    var paragraph = document.getElementById('paragraph');
+    if (checkbox.checked) {
+      paragraph.textContent = "Checkbox Checked";
+      sessionStorage.setItem(checkbox.id, 'checked');
+    } else {
+      sessionStorage.setItem(checkbox.id, 'unchecked');
+    }
+  }
+</script>
+
+</body>
+</html>
+
